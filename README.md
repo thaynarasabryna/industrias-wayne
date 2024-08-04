@@ -3,8 +3,8 @@
 ## Indústrias Wayne
 Este projeto full stack visa criar uma plataforma que aborde essas necessidades específicas, desenvolvendo um sistema de controle de acesso, gestão de recursos e um dashboard de visualização.
 
-<img width="1422" alt="Screenshot 2024-08-04 at 20 43 50" src="https://github.com/user-attachments/assets/cb93f00e-b78f-419e-9af2-15b06a42de7e">
 <img width="1422" alt="Screenshot 2024-08-04 at 20 43 41" src="https://github.com/user-attachments/assets/a7ec4eb6-ba38-4dc0-a0d8-d68efca89e93">
+<img width="1422" alt="Screenshot 2024-08-04 at 20 43 50" src="https://github.com/user-attachments/assets/cb93f00e-b78f-419e-9af2-15b06a42de7e">
 
 ## Funcionalidades Principais
 1. **Sistema de Gerenciamento de Segurança**
