@@ -1,11 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Essa é a minha homepage</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+Homepage Wayne
+{% endblock %}
+
+{% block content %}
+<style>
+    .banner-background {
+        background-image: url("{% static 'images/banner-home.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<div class="banner-background">
+</div>
+{% endblock %}
