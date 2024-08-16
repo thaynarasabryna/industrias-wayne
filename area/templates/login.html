@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+Login - Indústrias Wayne
+{% endblock %}
+
+{% block head %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="banner-background">
+        <div class="header-content">
+            <img src="{% static 'images/logo.png' %}" alt="Logo Indústrias Wayne" class="logo">
+            <h1 class="titulo-principal mt-3">Indústrias Wayne</h1>
+        </div>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="matricula" placeholder="Matrícula" required>
+                <input type="password" name="password" placeholder="Senha" required>
+                <div class="links">
+                    <a href="#">Esqueceu a senha?</a>
+                    <a href="#">1º Acesso</a>
+                </div>
+                <a href="{% url 'dashboard' %}" class="login-button" type="submit">
+                    <img src="{% static 'images/seta.png' %}" alt="Entrar" class="seta">
+                </a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
