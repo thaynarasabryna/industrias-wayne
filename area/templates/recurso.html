@@ -1,15 +1,192 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block titulo %}
-Recursos
-{% endblock %}
-
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/recurso.css' %}">
-    {% include 'navbar-top.html' %}
-    {% include 'navbar.html' %}
-{% endblock %}
+{% block titulo %}Recursos{% endblock %}
 
 {% block content %}
+    {% include 'estrutura.html' %}
+    <div class="main-content">
+        <div class="table-container">
+            <h2 class="table-title-recurso"><i class="fas fa-cogs"></i> Gerenciamento de Recursos</h2>
+        </div>
+
+        <div class="setor-select">
+            <select id="setor" name="setor" onchange="updateTable()">
+                <option value="">Selecione um setor</option>
+                <option value="laboratorio">Laboratório de Pesquisa Avançada</option>
+                <option value="centro">Centro de Controle de Operações</option>
+                <option value="deposito">Depósito de Equipamentos</option>
+                <option value="armazem">Armazém de Materiais Perigosos</option>
+                <option value="fabrica">Fábrica de Software e Protótipos</option>
+            </select>
+        </div>
+        
+        <!-- Bloco da Tabela de Recursos -->
+        <h2 class="table-title-recurso"><i class="fas fa-box"></i> Tabela de Recursos</h2>
+        <a href="#" class="btn-add"><i class="fa-solid fa-plus"></i> Novo Recurso</a>
+        <table class="crud-table" id="resourceTable">
+            <thead>
+                <tr>
+                    <th>Descrição do Produto</th>
+                    <th>Localidade</th>
+                    <th>Quantidade</th>
+                    <th>Situação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr> <!-- 1º LINHA  -->
+                    <td>Microscópio</td>
+                    <td>Laboratório de Pesquisa Avançada</td>
+                    <td>15</td>
+                    <td><span class="ativo">Ativo</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a href="#" class="btn-delete"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr> <!-- 2º LINHA  -->
+                    <td>Espectrofotômetro</td>
+                    <td>Laboratório de Pesquisa Avançada</td>
+                    <td>3</td>
+                    <td><span class="ativo">Ativo</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a href="#" class="btn-delete"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr> <!-- 3º LINHA  -->
+                    <td>Câmara Anóxia</td>
+                    <td>Laboratório de Pesquisa Avançada</td>
+                    <td>30</td>
+                    <td><span class="inativo">Inativo</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a href="#" class="btn-delete"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr> <!-- 4º LINHA  -->
+                    <td>Gerador de Energia</td>
+                    <td>Laboratório de Pesquisa Avançada</td>
+                    <td>5</td>
+                    <td><span class="inativo">Inativo</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a href="#" class="btn-delete"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr> <!-- 5º LINHA  -->
+                    <td>Placa de Circuito</td>
+                    <td>Laboratório de Pesquisa Avançada</td>
+                    <td>120</td>
+                    <td><span class="ativo">Ativo</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a href="#" class="btn-delete"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Paginação usando Bootstrap -->
+        <nav aria-label="Navegação de página">
+            <ul class="pagination justify-content-end">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Anterior" onclick="prevPage(); return false;">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+
+                <li class="page-item" id="pageNumbers"></li>
+                
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Próximo" onclick="nextPage(); return false;">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        const rowsPerPage = 4;
+        let currentPage = 1;
+
+        function displayTable() {
+            const table = document.getElementById('resourceTable');
+            const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            const totalRows = rows.length;
+            const totalPages = Math.ceil(totalRows / rowsPerPage);
+
+            for (let i = 0; i < totalRows; i++) {
+                rows[i].style.display = 'none';
+            }
+
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            for (let i = start; i < end && i < totalRows; i++) {
+                rows[i].style.display = '';
+            }
+            updatePagination(totalPages);
+        }
+
+        function nextPage() {
+            const totalPages = Math.ceil(document.getElementById('resourceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr').length / rowsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayTable();
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayTable();
+            }
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            displayTable();
+        }
+
+        function updatePagination(totalPages) {
+            const paginationContainer = document.querySelector('.pagination');
+
+            while (paginationContainer.children.length > 2) {
+                paginationContainer.removeChild(paginationContainer.children[1]);
+            }
+            
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                const a = document.createElement('a');
+                a.className = 'page-link';
+                a.href = '#';
+                a.innerText = i;
+                a.onclick = (function(page) {
+                    return function() {
+                        goToPage(page);
+                        return false;
+                    };
+                })(i);
+                li.appendChild(a);
+
+                paginationContainer.insertBefore(li, paginationContainer.children[paginationContainer.children.length - 1])
+            }
+        }
+        displayTable();
+    </script>
+    {% endblock %}
+{% block footer %}
+    {% include 'footer.html' %}    
 {% endblock %}

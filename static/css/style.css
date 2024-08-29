@@ -1,0 +1,683 @@
+.table-title-area, .table-title-configuracoes {
+    font-family: 'Trocchi', serif;
+    color: #2c3e50;
+    margin: 30px 60px auto;
+    font-size: 28px;
+    text-align: left;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 10px;
+    width: 90%;
+}
+
+.table-title-recurso, .table-title-dashboard {
+    font-family: 'Trocchi', serif;
+    color: #2c3e50;
+    margin: 30px 60px auto;
+    font-size: 28px;
+    text-align: left;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 10px;
+    width: 80%;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-= LOGIN -=-=-=-=-=-=-=-=-=-=-=-=- */
+.banner-background {
+    background-image: url("/static/images/fundo-escuro.png");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+.login-container {
+    width: 700px;
+    height: 450px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.input-container input {
+    width: 100%;
+    max-width: 600px;
+    padding: 25px 25px 25px 60px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 22px;
+    font-style: normal;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-container input::placeholder {
+    color: #ddd;
+    font-size: 16px;
+}
+
+.input-container .icon {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ddd;
+    font-size: 22px;
+    pointer-events: none;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.links a {
+    color: #fbfeff;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#esqueceu-senha {
+    text-align: left;
+    margin-left: 10px;
+}
+
+#esqueceu-senha:hover {
+    color: rgba(218, 31, 31, 0.851);
+    text-decoration: underline;
+}
+
+#primeiro-acesso {
+    text-align: end;
+    margin-right: 10px;
+}
+
+#primeiro-acesso:hover {
+    color: #bce9e4f6;
+    text-decoration: underline;
+}
+
+#login-button {
+    background-color: #bce9e4;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin-top: 15px;
+    width: 100%;
+    height: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+}
+
+#login-button:hover {
+    background-color: #8eefe6;
+    transform: scale(1.05);
+}
+
+button i {
+    font-size: 20px;
+}
+/* -=-=-=-=-=-=-=-=-=-=-= FIM LOGIN -=-=-=-=-=-=-=-=-=-=-=-=- */
+
+/* -=-=-=-=-=-=-=-=-=-=-= AREA -=-=-=-=-=-=-=-=-=-=-=-=- */
+/* ================ INÍCIO TABELA ================ */
+.area-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ecf0f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    max-height: 300px;
+    border: 1px solid #bdc3c7;
+}
+
+.area-table th,
+.area-table td {
+    padding: 12px 15px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+.area-table th {
+    background-color: #34495e;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.area-table tr {
+    transition: background-color 0.3s ease;
+}
+
+.area-table tr:hover {
+    background-color: #dcdde1;
+}
+
+.area-table td {
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.area-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #2c3e50;
+    padding: 8px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: #ecf0f1;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: #2c3e50;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+}
+
+.dropdown-content a:hover {
+    background-color: #bdc3c7;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+/* ================ FIM TABELA ================ */
+/* ================ INÍCIO PERMISSOES ================ */
+.acesso-concedido {
+    background-color: #2ecc71;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.acesso-negado {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.acesso-sob-revisao {
+    background-color: #f1c40f;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+/* ================ FIM PERMISSOES ================ */
+/* ================== INÍCIO LEGENDAS ==================== */
+.legend-title {
+    font-family: 'Trocchi', serif;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.legend-container {
+    padding: 10px;
+    color: #2c3e50;
+    max-width: 300px;
+    margin: auto;
+    margin-left: 50px;
+    text-align: center;
+    float: left;
+}
+
+.legend-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+}
+
+.legend-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.red {
+    background-color: #e74c3c;
+}
+
+.green {
+    background-color: #2ecc71;
+}
+
+.yellow {
+    background-color: #f1c40f;
+}
+/* ================== FIM LEGENDAS ==================== */
+/* -=-=-=-=-=-=-=-=-=-= FIM AREA -=-=-=-=-=-=-=-=-=-=-=- */
+
+
+/* -=-=-=-=-=-=-=-=-=-= RECURSO -=-=-=-=-=-=-=-=-=-=-=- */
+.table-container {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-add {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2980b9;
+    color: #ecf0f1;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+    margin: 15px 62px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: #3498db;
+    transform: scale(1.05);
+    animation: pulse 1s ease-in-out;
+}
+
+.setor-select {
+    margin: 0 50px auto;
+    position: relative;
+}
+
+#setor:hover {
+    cursor: pointer;
+    background-color: #1e2934;
+}
+
+.setor-select select {
+    padding: 13px;
+    margin: 10px 10px;
+    display: block;
+    border-radius: 10px;
+    color: #ecf0f1;
+    background-color: #2c3e50;
+    font-size: 16px;
+    width: 300px;
+    border: none;
+    outline: none;
+    position: relative;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ecf0f1" d="M12 15.88l-6-6 1.41-1.41L12 13.06l4.59-4.59L18 9.88l-6 6z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ===================== TABELA CRUD ===================== */
+.table-wrapper {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.crud-table {
+    width: 80%;
+    margin: 0px 62px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ecf0f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    max-height: 300px;
+    border: 1px solid #bdc3c7;
+}
+
+.crud-table th,
+.crud-table td {
+    padding: 12px 15px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+}
+
+.crud-table th {
+    background-color: #34495e;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.crud-table tr {
+    transition: background-color 0.3s ease;
+}
+
+.crud-table tr:hover {
+    background-color: #dcdde1;
+}
+
+.crud-table td {
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.crud-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit,
+.btn-delete {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+}
+
+.btn-edit {
+    background-color: #34495e;
+}
+
+.btn-edit:hover {
+    background-color: #12171b;
+}
+
+.btn-delete {
+    background-color: #34495e;
+}
+
+.btn-delete:hover {
+    background-color: #12171b;
+}
+
+.ativo {
+    background-color: #2ecc71;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+}
+
+.inativo{
+    background-color: #e74c3c;
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+}
+/* =================== FIM TABELA CRUD ===================/
+/* ==================== PAGINAÇÃO ====================== */
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    margin: 15px 60px;
+    flex-wrap: nowrap;
+}
+
+.page-link {
+    padding: 0.5rem 0.75rem;
+    border-radius: 3px;
+}
+
+.page-link:hover {
+    color: #364759;
+    background-color: #e9e9e9;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #34495e;
+    border-color: #34495e;
+    color: white;   
+}
+
+.pagination a {
+    color: #34495e;
+}
+
+.pagination-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #34495e;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+/* ===================== FIM PAGINAÇÃO ===================== */
+/* -=-=-=-=-=-=-=-=-=-= FIM RECURSO -=-=-=-=-=-=-=-=-=-=-=- 
+
+/* -=-=-=-=-=-=-=-=-=-= CONFIGURACOES -=-=-=-=-=-=-=-=-=-=-=- */
+.configuracoes-page {
+    padding: 20px;
+}
+
+.config-title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.config-title i {
+    margin-right: 8px;
+}
+
+.config-section {
+    background-color: #34495e22;
+    color: #34495e;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.config-section h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #ecf0f1;
+    background-color: #34495e;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.config-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    gap: 8px;
+}
+
+.config-item label {
+    flex: 1;
+    font-weight: bold;
+    color: #34495e;
+    font-size: 12px;
+}
+
+.config-item input[type="text"],
+.config-item input[type="email"],
+.config-item input[type="password"],
+.config-item select {
+    flex: 2;
+    padding: 4px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: #fff;
+    color: #2c3e50;
+}
+
+.config-item input[type="file"] {
+    flex: 2;
+    font-size: 12px;
+    color: #2c3e50;
+}
+
+.config-item input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.btn-save,
+.btn-danger,
+.btn-view-log,
+.btn-export {
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-save i,
+.btn-danger i,
+.btn-view-log i,
+.btn-export i {
+    margin-right: 4px;
+}
+
+.btn-save:hover,
+.btn-view-log:hover,
+.btn-export:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.status-active {
+    color: #19b75b;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .config-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .config-item label {
+        margin-bottom: 4px;
+    }
+}
+
+.btn-export {
+    background-color: #27ae60;
+}
+
+.btn-export:hover {
+    background-color: #229954;
+}
+
+/* -=-=-=-=-=-=-=-=-= FIM CONFIGURACOES -=-=-=-=-=-=-=-=-=-=- */

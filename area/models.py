@@ -21,3 +21,12 @@ class Area(models.Model):
 
     def __str__(self):
         return self.setor
+
+class Recurso(models.Model):
+    descricao = models.CharField(max_length=100)
+    localidade = models.CharField(max_length=100)
+    quantidade = models.PositiveIntegerField()
+    situacao = models.CharField(max_length=10, choices=[('Ativo', 'Ativo'), ('Inativo', 'Inativo')])
+
+    def __str__(self):
+        return self.descricao

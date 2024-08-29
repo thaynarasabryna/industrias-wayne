@@ -1,15 +1,114 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block titulo %}
-Áreas
-{% endblock %}
-
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/area.css' %}">
-    {% include 'navbar-top.html' %}
-    {% include 'navbar.html' %}
-{% endblock %}
+{% block titulo %}Áreas{% endblock %}
 
 {% block content %}
+    {% include 'estrutura.html' %}
+    <div class="main-content">
+        <div class="table-container">
+            <h2 class="table-title-area"><i class="fas fa-building"></i> Áreas </h2>
+            <table class="area-table">
+                <thead>
+                    <tr> <!-- TITULOS/DESCRICAO -->
+                        <th>Setores Industriais</th>
+                        <th>Níveis de acesso</th>
+                        <th>Localidade</th>
+                        <th>Última Inspeção</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr> <!-- 1º LINHA -->
+                        <td>Laboratório de Pesquisa Avançada</td>
+                        <td><span class="acesso-negado">Diretor, Cientistas</span></td>
+                        <td>Andar 1</td>
+                        <td><i class="fa-solid fa-calendar"></i> 10/08/2024</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Gerar Relatório</a>
+                                    <a href="#">Ver Histórico</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr> <!-- 2º LINHA -->
+                        <td>Centro de Controle de Operações</td>
+                        <td><span class="acesso-sob-revisao">Gerente, Técnicos</span></td>
+                        <td>Andar 2</td>
+                        <td><i class="fa-solid fa-calendar"></i> 12/02/2024</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Gerar Relatório</a>
+                                    <a href="#">Ver Histórico</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr> <!-- 3º LINHA -->
+                        <td>Depósito de Equipamentos</td>
+                        <td><span class="acesso-concedido">Analistas, Segurança</span></td>
+                        <td>Subsolo 1</td>
+                        <td><i class="fa-solid fa-calendar"></i> 29/11/2023</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Gerar Relatório</a>
+                                    <a href="#">Ver Histórico</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr> <!-- 4º LINHA -->
+                        <td>Armazém de Materiais Perigosos</td>
+                        <td><span class="acesso-negado">Químicos, Segurança</span></td>
+                        <td>Subsolo 2</td>
+                        <td><i class="fa-solid fa-calendar"></i> 18/07/2024</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Gerar Relatório</a>
+                                    <a href="#">Ver Histórico</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr> <!-- 5º LINHA -->
+                        <td>Fábrica de Software e Protótipos</td>
+                        <td><span class="acesso-concedido">Engenheiros, Desenvolvedores</span></td>
+                        <td>Andar 3</td>
+                        <td><i class="fa-solid fa-calendar"></i> 03/03/2024</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Gerar Relatório</a>
+                                    <a href="#">Ver Histórico</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- LEGENDAS -->
+            <div class="legend-container">
+                <h3 class="legend-title"><i class="fa-solid fa-info-circle"></i> Legenda dos Níveis de Acesso</h3>
+                <ul class="legend-list">
+                    <li><span class="legend-color red"></span> Não Permitido</li>
+                    <li><span class="legend-color green"></span> Concedido</li>
+                    <li><span class="legend-color yellow"></span> Sob Revisão</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% include 'footer.html' %}    
 {% endblock %}
